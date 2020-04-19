@@ -7,9 +7,10 @@ let vue = new Vue({
     sexo: '',
     pais: '',
     users: [
-      {nombre: 'Steven', apellido: 'Coaila', edad: 17, pais: ''},
-      {nombre: 'Jose', apellido: 'Rodriguez', edad: 25}
+      {nombre: 'Steven', apellido: 'Coaila', edad: 17, sexo: 'Macho' , pais: 'uwu'},
+      {nombre: 'Jose', apellido: 'Rodriguez', edad: 25, sexo: 'Macho' , pais: 'ewe'}
     ],
+
     modify: -10,
     modifyNombre: '',
     modifyApellido: '',
@@ -23,8 +24,8 @@ let vue = new Vue({
         nombre: this.nombre, // Envia el dato nombre del input al array users 
         apellido: this.apellido, // Envia el dato apellido del input al array users
         edad: this.edad, // Envia el dato edad del input al array users
-        sexo: this.sexo,
-        pais: this.pais
+        sexo: this.sexo, // Envia el dato sexo del input al array users
+        pais: this.pais // Envia el dato pais del input al array users
       })
 
       this.nombre = '',
@@ -42,16 +43,16 @@ let vue = new Vue({
       this.modifyNombre = this.users[index].nombre; // Trae los datos del array users al input modifyNombre
       this.modifyApellido = this.users[index].apellido; // Trae los datos del array users al input modifyApellido
       this.modifyEdad = this.users[index].edad; // Trae los datos del array users al input modifyEdad
-      this.modifySexo = this.users[index].sexo;
-      this.modifyPais = this.users[index].pais;
+      this.modifySexo = this.users[index].sexo; // Trae los datos del array users al input modifySexo
+      this.modifyPais = this.users[index].pais; // Trae los datos del array users al input modifyPais
     },
     saveUser(index) {
       this.users.splice(index, 1, {
         nombre: this.modifyNombre, // Guarda el nombre modificado a su respectivo lugar en el array users
         apellido: this.modifyApellido, // Guarda el apellido modificado a su respectivo lugar en el array users
         edad: this.modifyEdad, // Guarda el edad modificado a su respectivo lugar en el array users
-        sexo: this.modifySexo,
-        pais: this.modifyPais
+        sexo: this.modifySexo, // Guarda el sexo modificado a su respectivo lugar en el array users
+        pais: this.modifyPais // Guarda el pais modificado a su respectivo lugar en el array users
       })
 
       this.modifyNombre = '',
