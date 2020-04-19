@@ -11,38 +11,91 @@
 <body>
   <div id="app">
     <form action="" @submit.prevent="submitUser">
+      <!--Nombre-->
       <input type="text" v-model="nombre" placeholder="Nombre"> <br>
+      <!--Apellido-->
       <input type="text" v-model="apellido" placeholder="Apellido"> <br>
+      <!--Edad-->
       <input type="number" v-model="edad" placeholder="Edad"> <br>
+
+      <!--Sexo-->
+      <input type="radio" id="one" value="hombre" v-model="sexo">
+      <label for="one">Hombre</label>
+      <br>
+      <input type="radio" id="two" value="mujer" v-model="sexo">
+      <label for="two">Mujer</label>
+      <br>
+
+      <!--Pais-->
+      <select v-model="pais">
+        <option disabled value="">Seleccione su pais</option>
+        <option>Perú</option>
+        <option>Argentina</option>
+        <option>Chile</option>
+        <option>Mexico</option>
+        <option>Canada</option>
+      </select><br>
+
+      <br>
       <button>Enviar</button>
     </form>
 
     <br>
 
     <ul>
-      <li v-for="(user, index) in users">
+      <li v-for="(user, index) in users"> <!--Usuario n°-->
         
         <div v-if="modify == index">          
+          <!--Nombre modificar-->
           Nombre: <input type="text" v-model="modifyNombre"><br> 
+          
+          <!--Apellido modificar-->
           Apellido: <input type="text" v-model="modifyApellido"><br> 
-          Edad: <input type="number" v-model="modifyEdad"><br> 
+          
+          <!--Edad modificar-->
+          Edad: <input type="number" v-model="modifyEdad"><br>
+
+          <!--Sexo modificar--> 
+          Sexo: <input type="radio" id="modifyOne" value="hombre" v-model="modifySexo">
+                <label for="modifyOne">Hombre</label>
+
+                <input type="radio" id="modifyTwo" value="mujer" v-model="modifySexo">
+                <label for="modifyTwo">Mujer</label>
+                <br>
+          
+          <!--Pais modificar-->
+          Pais: <select v-model="modifyPais">
+                  <option disabled value="">Seleccione su pais</option>
+                  <option>Perú</option>
+                  <option>Argentina</option>
+                  <option>Chile</option>
+                </select><br><br> 
         </div>
         
-        <div v-else>
+        <div v-else> <!--Mostrar datos-->
           Nombre: {{ user.nombre }} <br>
           Apellido: {{user.apellido}} <br>
           Edad: {{user.edad}} <br>
+          Sexo: {{user.sexo}} <br>
+          Pais: {{user.pais}} <br>
         </div>
+        
+        <!--Boton Eliminar-->
         <button @click="deleteUser(index)">Eliminar</button>
+        
+        <!--Boton Guardar-->
         <button v-if="modify == index" @click="saveUser(index)">Guardar</button>
+        
+        <!--Boton Modificar-->
         <button v-else @click="modifyUser(index)">Modificar</button>
-      </li>
+      </li> <!--Fin del usuario n°-->
     </ul>
 
   </div>
 
-
-  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <!--VueJS-->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!--App.JS-->
   <script src="./src/js/app.js"></script>
 </body>
 </html>

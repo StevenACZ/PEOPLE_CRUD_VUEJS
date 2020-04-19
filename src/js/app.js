@@ -4,26 +4,34 @@ let vue = new Vue({
     nombre: '',
     apellido: '',
     edad: 0,
+    sexo: '',
+    pais: '',
     users: [
-      {nombre: 'Steven', apellido: 'Coaila', edad: 17},
+      {nombre: 'Steven', apellido: 'Coaila', edad: 17, pais: ''},
       {nombre: 'Jose', apellido: 'Rodriguez', edad: 25}
     ],
     modify: -10,
     modifyNombre: '',
     modifyApellido: '',
-    modifyEdad: 0
+    modifyEdad: 0,
+    modifySexo: '',
+    modifyPais: ''
   },
   methods: {
     submitUser() {
       this.users.push({
         nombre: this.nombre, // Envia el dato nombre del input al array users 
         apellido: this.apellido, // Envia el dato apellido del input al array users
-        edad: this.edad // Envia el dato edad del input al array users
+        edad: this.edad, // Envia el dato edad del input al array users
+        sexo: this.sexo,
+        pais: this.pais
       })
 
       this.nombre = '',
       this.apellido = '',
-      this.edad = 0
+      this.edad = 0,
+      this.sexo = '',
+      this.pais = ''
     },
     deleteUser(index) {
       this.users.splice(index, 1); // Elimina los datos del usuario(index) en el array users
@@ -34,17 +42,23 @@ let vue = new Vue({
       this.modifyNombre = this.users[index].nombre; // Trae los datos del array users al input modifyNombre
       this.modifyApellido = this.users[index].apellido; // Trae los datos del array users al input modifyApellido
       this.modifyEdad = this.users[index].edad; // Trae los datos del array users al input modifyEdad
+      this.modifySexo = this.users[index].sexo;
+      this.modifyPais = this.users[index].pais;
     },
     saveUser(index) {
       this.users.splice(index, 1, {
         nombre: this.modifyNombre, // Guarda el nombre modificado a su respectivo lugar en el array users
         apellido: this.modifyApellido, // Guarda el apellido modificado a su respectivo lugar en el array users
-        edad: this.modifyEdad // Guarda el edad modificado a su respectivo lugar en el array users
+        edad: this.modifyEdad, // Guarda el edad modificado a su respectivo lugar en el array users
+        sexo: this.modifySexo,
+        pais: this.modifyPais
       })
 
       this.modifyNombre = '',
       this.modifyApellido = '',
-      this.modifyEdad = 0
+      this.modifyEdad = 0,
+      this.modifySexo = '',
+      this.modifyPais = ''
 
       this.modify = -10; // El elemento modificar se desactiva, por lo tanto se pone a -10 para que no coincida con algun index
     }
