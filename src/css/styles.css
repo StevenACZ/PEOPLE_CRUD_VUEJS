@@ -93,6 +93,27 @@ h3 {
     font-weight: bold;
     cursor: pointer;
     width: 100%; }
+  .cardUser__edit {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .cardUser__edit input[type="text"],
+    .cardUser__edit input[type="number"] {
+      border: 1px solid var(--clr-primary);
+      padding: 1rem;
+      width: 100%;
+      margin-bottom: 1rem; }
+    .cardUser__edit > select {
+      border: 1px solid var(--clr-primary);
+      padding: 1rem;
+      width: 100%; }
+    .cardUser__edit > p {
+      border: none;
+      padding: 0;
+      margin-bottom: 1rem; }
+  .cardUser__sexo {
+    display: flex;
+    justify-content: space-between; }
 
 .header {
   background-color: var(--clr-secondary);

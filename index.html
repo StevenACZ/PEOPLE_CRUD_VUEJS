@@ -55,38 +55,46 @@
     <section class="cardUser__container">
       <div v-for="(user, index) in users" class="cardUser"> <!--Usuario n°-->
         
-        <div v-if="modify == index">          
+        <div v-if="modify == index" class="cardUser__edit">          
           <!--Nombre modificar-->
-          Nombre: <input type="text" v-model="modifyNombre"><br> 
+          <p>Nombre:</p> 
+          <input type="text" v-model="modifyNombre"> 
           
           <!--Apellido modificar-->
-          Apellido: <input type="text" v-model="modifyApellido"><br> 
+          <p>Apellido:</p>
+          <input type="text" v-model="modifyApellido"> 
           
           <!--Edad modificar-->
-          Edad: <input type="number" v-model="modifyEdad"><br>
+          <p>Edad:</p>
+          <input type="number" v-model="modifyEdad">
 
           <!--Sexo modificar--> 
-          Sexo: <input type="radio" id="modifyOne" value="hombre" v-model="modifySexo">
-                <label for="modifyOne">Hombre</label>
-
-                <input type="radio" id="modifyTwo" value="mujer" v-model="modifySexo">
-                <label for="modifyTwo">Mujer</label>
-                <br>
+          <p>Sexo:</p> 
+          <div class="cardUser__sexo">
+            <input type="radio" id="modifyOne" value="hombre" v-model="modifySexo">
+            <label for="modifyOne">Hombre</label>
+  
+            <input type="radio" id="modifyTwo" value="mujer" v-model="modifySexo">
+            <label for="modifyTwo">Mujer</label>
+          </div>
           
           <!--Pais modificar-->
-          Pais: <select v-model="modifyPais">
-                  <option disabled value="">Seleccione su pais</option>
-                  <option>Perú</option>
-                  <option>Argentina</option>
-                  <option>Chile</option>
-                </select><br><br> 
+          <p>Pais:</p> 
+          <select v-model="modifyPais">
+            <option disabled value="">Seleccione su pais</option>
+            <option>Perú</option>
+            <option>Argentina</option>
+            <option>Chile</option>
+            <option>Mexico</option>
+            <option>Canada</option>
+          </select>
         </div>
         
         <div v-else> <!--Mostrar datos-->
           <p>Nombre: {{ user.nombre }}</p>
           <p>Apellido: {{user.apellido}}</p>
           <p>Edad: {{user.edad}}</p>
-          <p>Sexo: {{user.sexo}}</p>
+          <p>Sexo: {{user.sexo.charAt(0).toUpperCase() + user.sexo.slice(1)}}</p>
           <p>Pais: {{user.pais}}</p>
         </div>
         

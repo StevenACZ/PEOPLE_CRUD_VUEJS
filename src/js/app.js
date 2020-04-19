@@ -7,15 +7,8 @@ let vue = new Vue({
     sexo: '',
     pais: '',
     users: [
-      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
-      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
-      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
-      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
-      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
-      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
-      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
-      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
-      {nombre: 'Jose', apellido: 'Rodriguez', edad: '25', sexo: 'Macho' , pais: 'ewe'}
+      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'hombre' , pais: 'Perú'},
+      {nombre: 'Jose', apellido: 'Rodriguez', edad: '25', sexo: 'mujer' , pais: 'Argentina'}
     ],
 
     modify: -10,
