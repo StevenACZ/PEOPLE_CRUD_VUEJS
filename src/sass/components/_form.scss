@@ -1,0 +1,46 @@
+/////////////////////////////////////////////////////////////
+//--(FORM)------------------------------------------------//
+///////////////////////////////////////////////////////////
+.form {
+  border: 1px solid var(--clr-primary);
+  width: 25rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 4rem 2rem;
+
+  & input[type="text"],
+  & input[type="number"] {
+    border: 1px solid var(--clr-primary);
+    padding: 1rem;
+    width: 100%;
+  }
+
+  & > *:not(:last-child) { // A todos los sub elementos de form que se apliquen los estilos, menos al ultimo.
+    margin-bottom: 1.5rem;
+  }
+
+  &__sexo {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 5rem);
+  }
+
+  & > select {
+    border: 1px solid var(--clr-primary);
+    padding: 1rem;
+    width: 100%;
+  }
+
+  & > button {
+    border: 1px solid var(--clr-primary);
+    padding: 1rem;
+    background-color: var(--clr-primary);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+  }
+}

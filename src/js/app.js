@@ -3,18 +3,25 @@ let vue = new Vue({
   data: {
     nombre: '',
     apellido: '',
-    edad: 0,
+    edad: '',
     sexo: '',
     pais: '',
     users: [
-      {nombre: 'Steven', apellido: 'Coaila', edad: 17, sexo: 'Macho' , pais: 'uwu'},
-      {nombre: 'Jose', apellido: 'Rodriguez', edad: 25, sexo: 'Macho' , pais: 'ewe'}
+      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
+      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
+      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
+      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
+      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
+      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
+      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
+      {nombre: 'Steven', apellido: 'Coaila', edad: '17', sexo: 'Macho' , pais: 'uwu'},
+      {nombre: 'Jose', apellido: 'Rodriguez', edad: '25', sexo: 'Macho' , pais: 'ewe'}
     ],
 
     modify: -10,
     modifyNombre: '',
     modifyApellido: '',
-    modifyEdad: 0,
+    modifyEdad: '',
     modifySexo: '',
     modifyPais: ''
   },
@@ -30,7 +37,7 @@ let vue = new Vue({
 
       this.nombre = '',
       this.apellido = '',
-      this.edad = 0,
+      this.edad = '',
       this.sexo = '',
       this.pais = ''
     },
@@ -57,7 +64,7 @@ let vue = new Vue({
 
       this.modifyNombre = '',
       this.modifyApellido = '',
-      this.modifyEdad = 0,
+      this.modifyEdad = '',
       this.modifySexo = '',
       this.modifyPais = ''
 

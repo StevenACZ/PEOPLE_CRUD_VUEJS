@@ -10,40 +10,50 @@
 </head>
 <body>
   <div id="app">
-    <form action="" @submit.prevent="submitUser">
-      <!--Nombre-->
-      <input type="text" v-model="nombre" placeholder="Nombre"> <br>
-      <!--Apellido-->
-      <input type="text" v-model="apellido" placeholder="Apellido"> <br>
-      <!--Edad-->
-      <input type="number" v-model="edad" placeholder="Edad"> <br>
+    <header class="header">
+      <h1 class="header__title">CRUD PERSONAS</h1>
+    </header>
 
-      <!--Sexo-->
-      <input type="radio" id="one" value="hombre" v-model="sexo">
-      <label for="one">Hombre</label>
-      <br>
-      <input type="radio" id="two" value="mujer" v-model="sexo">
-      <label for="two">Mujer</label>
-      <br>
+    <section class="form__container">
+      <form action="" @submit.prevent="submitUser" class="form">
+        <!--Nombre-->
+        <input type="text" v-model="nombre" placeholder="Nombre"> 
+        <!--Apellido-->
+        <input type="text" v-model="apellido" placeholder="Apellido"> 
+        <!--Edad-->
+        <input type="text" v-model="edad" placeholder="Edad"> 
+  
+        <!--Sexo-->
+        <div class="form__sexo">
+          <div>
+            <input type="radio" id="one" value="hombre" v-model="sexo">
+            <label for="one">Hombre</label>
+          </div>
+          
+          <div>
+            <input type="radio" id="two" value="mujer" v-model="sexo">
+            <label for="two">Mujer</label>
+          </div>
+        </div>
+        
+  
+        <!--Pais-->
+        <select v-model="pais">
+          <option disabled value="">Seleccione su pais</option>
+          <option>Perú</option>
+          <option>Argentina</option>
+          <option>Chile</option>
+          <option>Mexico</option>
+          <option>Canada</option>
+        </select>
+  
+        
+        <button>Enviar</button>
+      </form>
+    </section>
 
-      <!--Pais-->
-      <select v-model="pais">
-        <option disabled value="">Seleccione su pais</option>
-        <option>Perú</option>
-        <option>Argentina</option>
-        <option>Chile</option>
-        <option>Mexico</option>
-        <option>Canada</option>
-      </select><br>
-
-      <br>
-      <button>Enviar</button>
-    </form>
-
-    <br>
-
-    <ul>
-      <li v-for="(user, index) in users"> <!--Usuario n°-->
+    <section class="cardUser__container">
+      <div v-for="(user, index) in users" class="cardUser"> <!--Usuario n°-->
         
         <div v-if="modify == index">          
           <!--Nombre modificar-->
@@ -73,11 +83,11 @@
         </div>
         
         <div v-else> <!--Mostrar datos-->
-          Nombre: {{ user.nombre }} <br>
-          Apellido: {{user.apellido}} <br>
-          Edad: {{user.edad}} <br>
-          Sexo: {{user.sexo}} <br>
-          Pais: {{user.pais}} <br>
+          <p>Nombre: {{ user.nombre }}</p>
+          <p>Apellido: {{user.apellido}}</p>
+          <p>Edad: {{user.edad}}</p>
+          <p>Sexo: {{user.sexo}}</p>
+          <p>Pais: {{user.pais}}</p>
         </div>
         
         <!--Boton Eliminar-->
@@ -88,8 +98,8 @@
         
         <!--Boton Modificar-->
         <button v-else @click="modifyUser(index)">Modificar</button>
-      </li> <!--Fin del usuario n°-->
-    </ul>
+      </div> <!--Fin del usuario n°-->
+    </section>
 
   </div>
 
